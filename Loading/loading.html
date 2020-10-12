@@ -1,153 +1,150 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>loading动画</title>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <style type="text/css">
-        .loading {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 9999;
-            transition: opacity .65s;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background: #eeeeee;
+      .loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        transition: opacity 0.65s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: #eeeeee;
+      }
+
+      .gear {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .gear-inner {
+        position: absolute;
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #448aff;
+        animation: lol 6s linear infinite -0.37s;
+      }
+
+      .gear-inner2 {
+        right: 0;
+        bottom: 0;
+        width: 46px;
+        height: 46px;
+        animation: lol2 6s linear infinite;
+      }
+
+      .gear-inner span {
+        display: block;
+        position: absolute;
+        top: -8px;
+        left: 20px;
+        width: 16px;
+        height: 10px;
+        background: #448aff;
+        transform: rotate(0);
+        transform-origin: 8px 36px;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+      }
+
+      .gear-inner2 span {
+        top: -6px;
+        width: 10px;
+        height: 8px;
+        left: 18px;
+        transform-origin: 5px 29px;
+      }
+
+      .gear-inner span:nth-child(1) {
+        transform: rotate(0);
+      }
+
+      .gear-inner span:nth-child(2) {
+        transform: rotate(45deg);
+      }
+
+      .gear-inner span:nth-child(3) {
+        transform: rotate(90deg);
+      }
+
+      .gear-inner span:nth-child(4) {
+        transform: rotate(135deg);
+      }
+
+      .gear-inner span:nth-child(5) {
+        transform: rotate(180deg);
+      }
+
+      .gear-inner span:nth-child(6) {
+        transform: rotate(225deg);
+      }
+
+      .gear-inner span:nth-child(7) {
+        transform: rotate(270deg);
+      }
+
+      .gear-inner span:nth-child(8) {
+        transform: rotate(315deg);
+      }
+
+      .gear-inner span:nth-child(9) {
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: #49a9ee;
+        top: 15px;
+        left: 15px;
+      }
+
+      .gear-inner2 span:nth-child(9) {
+        width: 22px;
+        height: 22px;
+        top: 12px;
+        left: 12px;
+      }
+
+      @keyframes lol {
+        0% {
+          transform: rotate(0);
         }
 
-        .gear {
-            width: 100px;
-            height: 100px;
-            margin: 0 auto;
-            position: relative;
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes lol2 {
+        0% {
+          transform: rotate(360deg);
         }
 
-        .gear-inner {
-            position: absolute;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: #448AFF;
-            animation: lol 6s linear infinite -0.37s;
+        100% {
+          transform: rotate(0);
         }
-
-        .gear-inner2 {
-            right: 0;
-            bottom: 0;
-            width: 46px;
-            height: 46px;
-            animation: lol2 6s linear infinite;
-        }
-
-        .gear-inner span {
-            display: block;
-            position: absolute;
-            top: -8px;
-            left: 20px;
-            width: 16px;
-            height: 10px;
-            background: #448AFF;
-            transform: rotate(0);
-            transform-origin: 8px 36px;
-            border-top-left-radius: 2px;
-            border-top-right-radius: 2px;
-        }
-
-        .gear-inner2 span {
-            top: -6px;
-            width: 10px;
-            height: 8px;
-            left: 18px;
-            transform-origin: 5px 29px;
-        }
-
-        .gear-inner span:nth-child(1) {
-            transform: rotate(0);
-        }
-
-        .gear-inner span:nth-child(2) {
-            transform: rotate(45deg);
-        }
-
-        .gear-inner span:nth-child(3) {
-            transform: rotate(90deg);
-        }
-
-        .gear-inner span:nth-child(4) {
-            transform: rotate(135deg);
-        }
-
-        .gear-inner span:nth-child(5) {
-            transform: rotate(180deg);
-        }
-
-        .gear-inner span:nth-child(6) {
-            transform: rotate(225deg);
-        }
-
-        .gear-inner span:nth-child(7) {
-            transform: rotate(270deg);
-        }
-
-        .gear-inner span:nth-child(8) {
-            transform: rotate(315deg);
-        }
-
-        .gear-inner span:nth-child(9) {
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            background: #49a9ee;
-            top: 15px;
-            left: 15px;
-        }
-
-        .gear-inner2 span:nth-child(9) {
-            width: 22px;
-            height: 22px;
-            top: 12px;
-            left: 12px;
-        }
-
-        @keyframes lol {
-            0% {
-                transform: rotate(0);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes lol2 {
-            0% {
-                transform: rotate(360deg);
-            }
-
-            100% {
-                transform: rotate(0);
-            }
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="loading">
-        <div>重新修改</div>
-        <div class="gear">
-            <div class="gear-inner">
-                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-            </div>
-            <div class="gear-inner gear-inner2">
-                <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-            </div>
+      <div>重新修改</div>
+      <div class="gear">
+        <div class="gear-inner">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
         </div>
+        <div class="gear-inner gear-inner2">
+          <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
     </div>
-
-</body>
-
+  </body>
 </html>
